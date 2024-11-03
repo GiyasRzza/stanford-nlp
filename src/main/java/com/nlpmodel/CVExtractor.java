@@ -30,8 +30,7 @@ public class CVExtractor {
     private static Annotation getAnnotation() {
         Properties props = new Properties();
         props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
-
-        props.setProperty("ner.model", "E:/djl-model/models/custom-ner-model.ser.gz");
+        props.setProperty("ner.model", "models/custom-ner-model.ser.gz");
         StanfordCoreNLP pipeline = new StanfordCoreNLP(props);
 
 
