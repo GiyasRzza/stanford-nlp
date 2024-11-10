@@ -1,24 +1,41 @@
 package com.opencvjava.nlpms.service;
 
-import edu.stanford.nlp.pipeline.*;
-import edu.stanford.nlp.ling.*;
-import edu.stanford.nlp.util.*;
+import edu.stanford.nlp.ling.CoreAnnotations;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.util.CoreMap;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
-import java.util.*;
+
+import java.util.List;
+import java.util.Properties;
 
 @Service
 public class NlpService {
 
-    private  StanfordCoreNLP pipeline;
+    private StanfordCoreNLP pipeline;
 
     @PostConstruct
     public void init() {
-        Properties props = new Properties();
-        props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
-        props.setProperty("ner.model", "models/custom-ner-model.ser.gz");
+        loadPipeline();
+    }
 
-        pipeline = new StanfordCoreNLP(props);
+    public void reloadModel() {
+        loadPipeline();
+    }
+
+    private void loadPipeline() {
+        try {
+            Properties props = new Properties();
+            props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
+            props.setProperty("ner.model", "models/custom-ner-model.ser.gz");
+
+            pipeline = new StanfordCoreNLP(props);
+            System.out.println("Model yüklendi!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void extractEntities(String text) {

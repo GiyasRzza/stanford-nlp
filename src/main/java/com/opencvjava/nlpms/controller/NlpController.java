@@ -16,4 +16,10 @@ public class NlpController {
         nlpService.extractEntities(text);
         return "Entity extraction completed!";
     }
+
+    @GetMapping("/reload-model")
+    public String reloadModel() {
+        nlpService.reloadModel();
+        return "Model reloaded.";
+    }
 }
