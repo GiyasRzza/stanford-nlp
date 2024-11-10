@@ -1,6 +1,6 @@
 useNext=true
 usePrev=true
-trainFile=E:/djl-model/src/main/resources/data/training-data.txt
+trainFile=E:\djl-model\src\main\resources\data\training-data.txt
 serializeTo=models/custom-ner-model.ser.gz
 useSequences=true
 map=word=0,answer=1
