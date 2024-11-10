@@ -1,10 +1,11 @@
 useNext=true
 usePrev=true
 trainFile=E:/djl-model/src/main/resources/data/training-data.txt
-maxNGramLeng=6
 serializeTo=models/custom-ner-model.ser.gz
 useSequences=true
 map=word=0,answer=1
 useClassFeature=true
 useNGrams=true
 useWord=true
+iterations=2000
+maxNGramLeng=25
