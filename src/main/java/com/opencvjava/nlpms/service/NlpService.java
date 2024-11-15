@@ -1,19 +1,22 @@
 package com.opencvjava.nlpms.service;
 
+import com.opencvjava.nlpms.core.NlpTraining;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 import edu.stanford.nlp.util.CoreMap;
 import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
+import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 import java.util.Properties;
 
 @Service
+@RequiredArgsConstructor
 public class NlpService {
-
+    private final NlpTraining nlpTraining;
     private StanfordCoreNLP pipeline;
 
     @PostConstruct
@@ -21,15 +24,12 @@ public class NlpService {
         loadPipeline();
     }
 
-    public void reloadModel() {
-        loadPipeline();
-    }
 
     private void loadPipeline() {
         try {
             Properties props = new Properties();
             props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner");
-            props.setProperty("ner.model", "models/custom-ner-model.ser.gz");
+            props.setProperty("ner.model", "src/main/resources/model/custom-ner-model.ser.gz");
 
             pipeline = new StanfordCoreNLP(props);
             System.out.println("Model yüklendi!");
@@ -58,5 +58,15 @@ public class NlpService {
                 System.out.println("---------------------------------------");
             }
         }
+    }
+
+    public void modelTraining(){
+        nlpTraining.trainLocal();
+        loadPipeline();
+
+    }
+    public void modelTraining(MultipartFile file) {
+        nlpTraining.trainOnline(file);
+        loadPipeline();
     }
 }
