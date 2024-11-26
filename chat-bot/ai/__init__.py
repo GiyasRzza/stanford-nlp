@@ -7,7 +7,7 @@ def chat_with_bot():
 
     while True:
 
-        user_input = input("Your message: ")
+        user_input = input("Sen: ")
 
         if user_input.lower() == "exit":
             print("Bot: I'm sorry, I'm afraid I can't do that.")
