@@ -1,4 +1,4 @@
-package com.opencvjava.nlpms.core;
+package com.careerhive.file_service.core;
 
 import edu.stanford.nlp.ie.crf.CRFClassifier;
 import edu.stanford.nlp.ling.CoreLabel;

@@ -1,4 +1,4 @@
-package com.opencvjava.nlpms.exception;
+package com.careerhive.file_service.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

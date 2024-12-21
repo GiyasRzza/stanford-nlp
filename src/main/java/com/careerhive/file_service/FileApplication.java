@@ -1,13 +1,13 @@
-package com.opencvjava.nlpms;
+package com.careerhive.file_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class NlpMsApplication {
+public class FileApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(NlpMsApplication.class, args);
+        SpringApplication.run(FileApplication.class, args);
     }
 
 }

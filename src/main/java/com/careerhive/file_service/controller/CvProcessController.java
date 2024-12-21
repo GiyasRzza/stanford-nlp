@@ -1,7 +1,6 @@
-package com.opencvjava.nlpms.controller;
+package com.careerhive.file_service.controller;
 
-import com.opencvjava.nlpms.service.CvProcessorService;
-import com.opencvjava.nlpms.service.NlpService;
+import com.careerhive.file_service.service.CvProcessorService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

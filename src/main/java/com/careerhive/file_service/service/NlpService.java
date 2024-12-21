@@ -1,6 +1,6 @@
-package com.opencvjava.nlpms.service;
+package com.careerhive.file_service.service;
 
-import com.opencvjava.nlpms.core.NlpTraining;
+import com.careerhive.file_service.core.NlpTraining;
 import edu.stanford.nlp.ling.CoreAnnotations;
 import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.pipeline.Annotation;

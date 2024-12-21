@@ -1,4 +1,4 @@
-package com.opencvjava.nlpms.core;
+package com.careerhive.file_service.core;
 
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFPictureData;

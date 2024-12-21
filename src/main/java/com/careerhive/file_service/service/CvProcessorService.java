@@ -1,7 +1,7 @@
-package com.opencvjava.nlpms.service;
-import com.opencvjava.nlpms.core.PdfParser;
-import com.opencvjava.nlpms.core.WordParser;
-import com.opencvjava.nlpms.exception.InvalidFileTypeException;
+package com.careerhive.file_service.service;
+import com.careerhive.file_service.exception.InvalidFileTypeException;
+import com.careerhive.file_service.core.PdfParser;
+import com.careerhive.file_service.core.WordParser;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
